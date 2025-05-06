@@ -1,0 +1,49 @@
+✅ Quick Comparison (Sequences)
+nb: ordered 'indexing'
+
+Type   Ordered?	 Changeable?	            Duplicates?	               Syntax Example
+List	✅ Yes	✅ Yes	                  ✅ Yes	                      [x, y]
+Tuple	✅ Yes	❌ No	                  ✅ Yes	                      (x, y)
+String	✅ Yes	❌ No	                  ✅ Yes	                       "xy"
+Set	    ❌ No	✅ Yes	                  ❌ No	                      {x, y}
+
+⚠ Notes:
+set.pop() removes a random item (not the last).
+tuple is immutable — you can't change it (no .append(), .remove(), etc.).
+set.remove(x) throws an error if x not found. Use set.discard(x) to avoid error.
+set_name.add(x) is only for sets — not for other sequences. (or .update([x,y]))
+Sequences 	a, b = (x, y) / a, b = sq_name  a = x, b = y
+	 
+✅ General Functions:
+Function	                 What it Does
+len(sq)	        all                        Get the number of items
+max(sq)	        all 	                  Highest value/item	
+min(sq)	        all	                      Lowest value/item	
+sum           all (except string)         Sum of all values	
+sorted(sq)	  all (except sets)	           Returns a sorted copy (original unchanged)	
+enumerate(sq)   all	                         Get index and item at the same time
+list(sq)tuple(sq)set(sq)	
+type(sq)     Shows the data type (list)
+
+🧰 Methods (actions you do):
+Method	            Description	              List	 Set  Tuple
+append(x)      Add item to the end	           ✅	❌	❌
+insert(i, x)   Insert at position i	           ✅	❌	❌
+remove(x)	    Remove item	                   ✅	✅	❌
+pop()	     Rem&return last item	           ✅	✅	❌
+sort()	        Sort(ascending)	               ✅	❌	❌
+reverse()	   Reverse the list	               ✅	❌	❌
+index(x)	     Get index item	               ✅	❌	✅
+count(x)	         Count  x                  ✅	❌	✅
+copy()	      Shallow copy of list	           ✅	✅	❌
+extend([x, y]) Adds another list	           ✅	❌	❌
+clear()	        Remove all items	           ✅	✅	❌
+
+🔹 Strings Only
+Method	Example	                                      Description
+.lower()	"HELLO".lower() → "hello"	 Make lowercase
+.upper()	"hi".upper() → "HI"	                  Make uppercase
+.strip()	" hi ".strip() → "hi"	                  Remove whitespace
+.replace()	"hi".replace("h", "y") → "yi"	Replace part of string
+.split()	"a,b,c".split(",") → ['a','b','c']	 Split by delimiter
+.join(list)	",".join(["a","b"]) → "a,b"	 Join list to string

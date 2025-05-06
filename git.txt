@@ -1,0 +1,20 @@
+git init
+
+git remote add origin https://github.com/maryam-toubali/BootcampGeeksInstitute.git
+git branch -M main
+git push -u origin main
+
+git add .
+git commit -m "first commit"
+git push
+
+
+cd repertoir
+cd.. (retour rep)
+
+mkdir nomdossier
+echo "msg" >> nomfichier
+
+winget install --id Git.Git
+
+python3 exit (retour au terminal)
