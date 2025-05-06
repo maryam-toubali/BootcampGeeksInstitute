@@ -6,15 +6,21 @@ result = (99**3) * 8
 print(f"the result of: (99^3)*8 is: {result}")
 
 #ex3
-name = "Maryam"
-usname = input("What is your name? ")
-if usname.capitalize()==name.capitalize():
-    print("We have the same name.")
-else :
-    print(f"Nice to meet you, {usname}.")fe
+myname="maryam"
+username=input("Your name: ")
+if myname==username.lower() :
+    print('We have the same name 😊')
+else:
+    print('You have a great name 😊')
+
     
 #ex4
-
+height= float(input('Plase input your height in centimeters: '))
+if height > 145 :
+    print('You are tall enough to ride.')
+else : 
+    print ('You need to grow some more to ride')
+    
 #ex5
 
 #ex6
