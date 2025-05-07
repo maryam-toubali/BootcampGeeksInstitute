@@ -1,3 +1,4 @@
+
 🔁 What Are Loops?
 Loops let you repeat a block of code multiple times instead of writing it again and again.
 
@@ -10,9 +11,6 @@ The range() function creates a list of numbers. The end value is not included.
 3️⃣ While Loops (while condition)
 Repeat as long as a condition is True.
 
-4️⃣ Using a Flag
+⚠ Using a Flag
 You can control the loop with a variable (called a flag)
 
-5️⃣ Break and Continue
-break = stop the loop entirely
-continue = skip the current iteration 

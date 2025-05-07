@@ -1,4 +1,13 @@
 #
+
+
+#
+x=1
+while x < 11:
+       print(x)
+       x += 1
+
+#
 a_tuple = (10, 20, 30, 40)
 a,b,c,d = a_tuple
 print(d)

@@ -1,6 +1,9 @@
 
-sandwich_orders = ["Tuna sandwich", "Pastrami sandwich", "Avocado sandwich", "Pastrami sandwich", "Egg sandwich", "Chicken sandwich", "Pastrami sandwich"]
-while 'Pastrami sandwich' in sandwich_orders :
-    sandwich_orders.remove('Pastrami sandwich')
-print(sandwich_orders)
-for sandwich_orders
+
+
+string = list(input("Enter a string: "))    # input() gives a string by default.
+result = []
+for char in string:
+   if not result or char != result[-1]:          # not result (true) = empty list 
+       result.append(char)
+print(''.join(result))

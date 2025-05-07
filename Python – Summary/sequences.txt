@@ -15,13 +15,13 @@ set_name.add(x) is only for sets — not for other sequences. (or .update([x,y])
 Sequences 	a, b = (x, y) / a, b = sq_name  a = x, b = y
 	 
 ✅ General Functions:
-Function	                 What it Does
-len(sq)	        all                        Get the number of items
+Function	                                What it Does
+len(sq)	        all                    Get the number of items
 max(sq)	        all 	                  Highest value/item	
 min(sq)	        all	                      Lowest value/item	
 sum           all (except string)         Sum of all values	
-sorted(sq)	  all (except sets)	           Returns a sorted copy (original unchanged)	
-enumerate(sq)   all	                         Get index and item at the same time
+sorted(sq)	  all (except sets)	     Returns a sorted copy (original unchanged)	
+enumerate(sq)   all	                  Get index and item at the same time
 list(sq)tuple(sq)set(sq)	
 type(sq)     Shows the data type (list)
 
@@ -40,10 +40,10 @@ extend([x, y]) Adds another list	           ✅	❌	❌
 clear()	        Remove all items	           ✅	✅	❌
 
 🔹 Strings Only
-Method	Example	                                      Description
-.lower()	"HELLO".lower() → "hello"	 Make lowercase
-.upper()	"hi".upper() → "HI"	                  Make uppercase
-.strip()	" hi ".strip() → "hi"	                  Remove whitespace
-.replace()	"hi".replace("h", "y") → "yi"	Replace part of string
-.split()	"a,b,c".split(",") → ['a','b','c']	 Split by delimiter
-.join(list)	",".join(["a","b"]) → "a,b"	 Join list to string
+Method	          Example	                                      Description
+.lower()	"HELLO".lower() → "hello"	                        Make lowercase
+.upper()	"hi".upper() → "HI"	                                Make uppercase
+.strip()	" hi ".strip() → "hi"	                            Remove whitespace
+.replace()	"hi".replace("h", "y") → "yi"	                  Replace part of string
+.split()	"a,b,c".split(",") → ['a','b','c']	                Split by delimiter
+.join(list)	 "separator_string".join(sq)	                       Join sequence to string
