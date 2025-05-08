@@ -1,9 +1,8 @@
-
-
-
-string = list(input("Enter a string: "))    # input() gives a string by default.
-result = []
-for char in string:
-   if not result or char != result[-1]:          # not result (true) = empty list 
-       result.append(char)
-print(''.join(result))
+import random
+def compare(num):
+    rand_num = random.randint(1, 100)
+    if num == rand_num:
+        print("Numbers match.")
+    else:
+        print(f"Your number: {num}, Random number: {rand_num}")
+compare(50)

@@ -1,0 +1,33 @@
+
+  Function Parameters: 
+
+| Concept                  | Description                                                              | Example                            | When to Use                                                  |
+| ------------------------ | ------------------------------------------------------------------------ | ---------------------------------- | ------------------------------------------------------------ |
+| Normal Attributes        | Fixed parameters passed directly to the function.                        | `def greet(name):`                 | When you know the exact parameters.                          |
+| `*args` (Positional)     | Allows variable number of positional arguments, stored as a tuple.       | `def add(*args):`                  | When you don’t know how many arguments will be passed.       |
+| `**kwargs` (Keyword)     | Allows variable number of keyword arguments, stored as a dictionary.     | `def greet(**kwargs):`             | When you don’t know how many key-value pairs will be passed. |
+| All Together             | Combine normal attributes, `*args`, and `**kwargs` in the same function. | `def func(name, *args, **kwargs):` | When you need both fixed parameters and flexible arguments.  |
+
+
+  lambda: (functions are anonymous)  lambda arguments: expression
+
+| **Concept**          | **Simple Explanation**                                            |
+| -------------------- | ----------------------------------------------------------------- |
+| `lambda`             | A small function written in one line only.                        |
+|   Usage              | Used with `map`, `filter`, or when you need a temporary function. |
+| No `return` or `def` | You don't need to write `return` or `def` for lambda functions.   |
+
+
+| **Function**  | **What It Does**                       | **Example**                                          | **Use Case**                              |
+| ------------- | -------------------------------------- | ---------------------------------------------------- | ----------------------------------------- |
+| `enumerate()` | Adds index (number) to each item       | `for i, val in enumerate(['a', 'b']): print(i, val)` | When you need both index and value        |
+| `zip()`       | Combines items from multiple iterables | `for a, b in zip([1,2], ['x','y']): print(a, b)`     | Loop through lists together               |
+| `reduce()`    | Combines all items into one value      | `reduce(lambda x,y: x+y, [1, 2, 3])`  (=1+2=3→3+3=6) | Sum, multiply, or combine into one result | 
+| `map()`       | Applies a function to all items        | `map(lambda x: x*2, [1, 2, 3])`                      | Modify each item (e.g., double values)    |  
+| `filter()`    | Keeps items that meet a condition      | `filter(lambda x: x > 2, [1, 2, 3])`                 | Keep only certain items                   |
+  
+  ⚠ use enumerate() and zip() with for loop, Convert to a list or Inside other functions
+  ⚠ reduce, map and filter (function, iterables) 
+  ⚠ reduce: import it from functools (from functools import reduce)
+
+  

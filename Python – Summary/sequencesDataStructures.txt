@@ -1,3 +1,15 @@
+
+
+ ⚠ iterables(anything you can loop over using a for loop): 
+    Lists, Tuples, Strings, Dictionaries, Sets, Ranges and Any object with __iter__() method 
+   
+      
+✅ Tips:
+list when you need to modify or update data frequently.
+tuple to protect data from being changed (it's immutable).
+dictionary when you have data in key-value pairs (like a map).
+set when you want to ensure no duplicate elements are stored.
+
 ✅ Quick Comparison (Sequences)
 nb: ordered 'indexing'
 
@@ -22,8 +34,9 @@ min(sq)	        all	                      Lowest value/item
 sum           all (except string)         Sum of all values	
 sorted(sq)	  all (except sets)	     Returns a sorted copy (original unchanged)	
 enumerate(sq)   all	                  Get index and item at the same time
-list(sq)tuple(sq)set(sq)	
-type(sq)     Shows the data type (list)
+
+    list(sq) tuple(sq) set(sq) dict(sq)	
+    type(sq)     Shows the data type 
 
 🧰 Methods (actions you do):
 Method	            Description	              List	 Set  Tuple

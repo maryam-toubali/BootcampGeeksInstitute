@@ -1,9 +1,0 @@
-
-
-
-| Concept                  | Description                                                              | Example                            | When to Use                                                  |
-| ------------------------ | ------------------------------------------------------------------------ | ---------------------------------- | ------------------------------------------------------------ |
-| Normal Attributes        | Fixed parameters passed directly to the function.                        | `def greet(name):`                 | When you know the exact parameters.                          |
-| `*args` (Positional)     | Allows variable number of positional arguments, stored as a tuple.       | `def add(*args):`                  | When you don’t know how many arguments will be passed.       |
-| `**kwargs` (Keyword)     | Allows variable number of keyword arguments, stored as a dictionary.     | `def greet(**kwargs):`             | When you don’t know how many key-value pairs will be passed. |
-| All Together             | Combine normal attributes, `*args`, and `**kwargs` in the same function. | `def func(name, *args, **kwargs):` | When you need both fixed parameters and flexible arguments.  |
