@@ -5,47 +5,55 @@ print(dict(zip(keys,values)))  # dic={} for i,j in zip(keys,values): dic[i]=j pr
 
 
 #ex2
-family = {"rick": 43, 'beth': 13, 'morty': 5, 'summer': 8}
-total_cost = 0
-for name, age in family.items():
-    if age < 3: pay = 0
-    elif age <= 12: pay = 10
-    else: pay = 15
-    print(f"{name} has to pay ${cost}")
-    total_cost += pay
-print("Total cost:", total_cost)
-
+family = {}
+price = 0
+while True:
+   name = input('Enter your name or done to exit: ')
+   if name.lower() == 'done' :
+       break
+   age = int(input('Enter your age: '))
+   family[name] = age
+for name ,age in family.items() :
+   if age < 3 :
+      cost = 0
+   elif age >= 3 and age < 12 :
+      cost = 10
+   else:  
+      cost = 15
+   price += cost
+   print(f'{name} cost: {cost}')       
+print(f'You cost: {price}')
 
 #ex3
 brand = {
-    "name": "Zara",
-    "creation_date": 1975,
-    "creator_name": "Amancio Ortega Gaona",
-    "type_of_clothes":["men","women","children","home"],
-    "international_competitors": ["Gap","H&M","Benetton"],
-    "number_stores": 7000,
-    "major_color": {
-        "France":"blue",
-        "Spain":"red",
-        "US": ["pink","green"]
-    }
+   'name': 'Zara', 
+   'creation_date': 1975, 
+   'creator_name': ['Amancio', 'Ortega', 'Gaona'], 
+   'type_of_clothes': ['men', 'women', 'children', 'home'], 
+   'international_competitors': ['Gap', 'H&M', 'Benetton'],
+   'number_stores': 7000,
+   'major_color' : { 
+        'France': 'blue', 
+        'Spain': 'red', 
+        'US': ['pink', 'green']
+   }
 }
-brand["number_stores"] = 2
-print("Zara's clients are:", brand["type_of_clothes"])
-brand["country_creation"] = "Spain"
-if "international_competitors" in brand:
-    brand["international_competitors"].append("Desigual")
-del brand["creation_date"]
-print("Last competitor:", brand["international_competitors"][-1])
-print("US colors:", brand["major_color"]["US"])
-print("Number of key-value pairs:", len(brand))
-print("Keys:", brand.keys())
+brand['number_stores'] = 2
+print('the zara clients are :',  brand['type_of_clothes'])
+brand['country_creation'] = 'Spain'
+if 'international_competitors' in brand :
+    brand['international_competitors'].append('Desigual')
+del brand['creation_date']
+print('The last international competitors is: ', brand['international_competitors'][-1])
+print('The major clothes is: ', brand['major_color']['US'])
+print('The length of my dictionary is: ', len(brand))
+print('The Keys of my dictionary is: ', brand.keys())
 more_on_zara = {
-    "creation_date": 1975,
-    "number_stores": 10000
+  'creation_date': 1975,
+  'number_stores': 10000
 }
 brand.update(more_on_zara)
-print("Updated number of stores:", brand["number_stores"])
+print("Updated number of stores:", brand['number_stores'])
 
 #ex4
 def describe_city(city,country="Morocco"):
@@ -59,6 +67,7 @@ def compare(num):
     if num == rand_num:
         print("Numbers match.")
     else:
+        print("You guessed it wrong")
         print(f"Your number: {num}, Random number: {rand_num}")
 compare(10)
 
@@ -73,14 +82,16 @@ make_shirt(text="Safe", size="S")
 #ex7
 import random
 def get_random_temp(season):
-    if season == "winter":
-        return random.uniform(-10,16)
-    elif season == "spring":
-        return random.uniform(10,22)
-    elif season == "summer":
-        return random.uniform(24,40)
-    else:
-        return random.uniform(5,20)
+      if season.lower() == 'winter': 
+          return random.randint(-10,9)
+      elif season.lower() == 'spring':
+          return random.randint(10,17)
+      elif season.lower() == 'automn':
+          return random.randint(18,24)  
+      elif season.lower() == 'summer':
+          return random.randint(25,40)    
+      else:
+          return "Invalid season"
 def main():
     month = int(input("Enter the month number (1-12): "))
     if month in [12,1,2]:
@@ -91,18 +102,14 @@ def main():
         season = "summer"
     else:
         season = "autumn"
-    temp = get_random_temp(season)
-    print(f"The temperature right now is {temp:.1f} degrees Celsius.")
-    if temp < 0:
-        print("Brrr, that’s freezing! Wear some extra layers today")
-    elif temp < 16:
-        print("Quite chilly! Don’t forget your coat")
-    elif temp < 23:
-        print("Nice weather!")
-    elif temp < 33:
-        print("Warm and sunny!")
-    else:
-        print("It's really hot!")
+    random_num = get_random_temp(season)
+    print(f"The temperature right now is {random_num:.1f} degrees Celsius.")   #.1f → format the number as a float with 1 decimal place
+    if random_num < 0: print('Brrr, it is freezing!')
+    elif random_num < 16: print('Quite chilly! Don’t forget your coat')
+    elif random_num < 23: print("Nice weather!")
+    elif random_num < 33: print("Warm and sunny!")
+    else: print("It's really hot!")
+print(main())
 
 #ex8
 data = [
@@ -113,20 +120,34 @@ data = [
     {"question": "Anakin Skywalker grew up to be who?", "answer": "Darth Vader"},
     {"question": "What species is Chewbacca?", "answer": "Wookiee"}
 ]
-def star_wars_quiz():
-    correct = 0
-    wrong = 0
-    wrong_answers = []
-    for q in data:
-        ans = input(q["question"] + " ").strip()
-        if ans.lower() == q["answer"].lower():
-            correct += 1
-        else:
-            wrong += 1
-            wrong_answers.append({"question": q["question"], "your_answer": ans, "correct": q["answer"]})
-    print(f"Correct: {correct}, Incorrect: {wrong}")
-    if wrong > 3:
-        print("You got more than 3 wrong. Try again!")
-    for wa in wrong_answers:
-        print(f"Question: {wa['question']}\nYour answer: {wa['your_answer']}\nCorrect answer: {wa['correct']}\n")
-
+def ask_qst():
+    corr = 0                   
+    incorr = 0                
+    wrong_answers = []         
+    for i in range(len(data)):  #
+      print(f"Question: {data[i]['question']}\n")
+      user_answer = input('Enter your answer: ')
+      if user_answer.lower().strip() == data[i]['answer'].lower():   # strip() method removes any extra spaces
+        corr += 1
+      else:
+        incorr += 1
+        wrong_answers.append({
+          "question": data[i]["question"],  
+          "your_answer": user_answer,
+          "correct_answer": data[i]["answer"]     
+        })
+    report_results(corr, incorr, wrong_answers)
+def report_results(corr, incorr, wrong_answers):
+    print("\nQuiz Results:")
+    print(f"Correct answers: {corr}")
+    print(f"Incorrect answers: {incorr}")
+    if wrong_answers:
+      print("\nQuestions you got wrong:")
+      for item in wrong_answers:
+        print(f"{item['question']}")
+        print(f"Your answer: {item['your_answer']}")
+        print(f"Correct answer: {item['correct_answer']}\n") 
+      if incorr > 3:  
+        print("You had more than 3 incorrect. Try again.")
+        ask_qst()
+ask_qst()

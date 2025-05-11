@@ -1,3 +1,5 @@
+#ch
+# made with AI
 import math
 class Circle:
     # Constructor: allows creating a Circle with radius or diameter
@@ -34,7 +36,7 @@ class Circle:
         if isinstance(other, Circle):
             return self.radius == other.radius
         return NotImplemented
-    
+
 c1 = Circle(radius=5)
 c2 = Circle(diameter=10)
 c3 = c1 + c2  
@@ -47,3 +49,4 @@ circles = [c3, c1, c2]
 sorted_circles = sorted(circles)
 for c in sorted_circles:
     print(c)
+

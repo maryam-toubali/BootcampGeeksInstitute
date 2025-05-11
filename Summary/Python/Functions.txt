@@ -18,15 +18,17 @@
 | No `return` or `def` | You don't need to write `return` or `def` for lambda functions.   |
 
 
-| **Function**  | **What It Does**                       | **Example**                                          | **Use Case**                              |
-| ------------- | -------------------------------------- | ---------------------------------------------------- | ----------------------------------------- |
-| `enumerate()` | Adds index (number) to each item       | `for i, val in enumerate(['a', 'b']): print(i, val)` | When you need both index and value        |
-| `zip()`       | Combines items from multiple iterables | `for a, b in zip([1,2], ['x','y']): print(a, b)`     | Loop through lists together               |
-| `reduce()`    | Combines all items into one value      | `reduce(lambda x,y: x+y, [1, 2, 3])`  (=1+2=3→3+3=6) | Sum, multiply, or combine into one result | 
-| `map()`       | Applies a function to all items        | `map(lambda x: x*2, [1, 2, 3])`                      | Modify each item (e.g., double values)    |  
-| `filter()`    | Keeps items that meet a condition      | `filter(lambda x: x > 2, [1, 2, 3])`                 | Keep only certain items                   |
-  
+| **Function**            | **What It Does**                       | **Example**                                          | **Use Case**                              |   Returns       | Need to Unpack? |
+| ----------------------- | -------------------------------------- | ---------------------------------------------------- | ----------------------------------------- | --------------- | --------------- |
+|enumerate(iterable)      | Adds index (number) to each item       | `for i, val in enumerate(['a', 'b']): print(i, val)` | When you need both index and value        | `(index, item)` | Yes using list()|
+|zip(iterable1,iterable2) | Combines items from multiple iterables | `for a, b in zip([1,2], ['x','y']): print(a, b)`     | Loop through lists together               | `(a, b)`        | Yes using list()|
+|filter(function,iterable)| Keeps items that meet a condition      | `filter(lambda x: x > 2, [1, 2, 3])`                 | Keep only certain items                   | `filter object` | No              | 
+|map(function,iterable)   | Applies a function to all items        | `map(lambda x: x*2, [1, 2, 3])`                      | Modify each item (e.g., double values)    | `map object`    | No              |
+|reduce(function,iterable)| Combines all items into one value      | `reduce(lambda x,y: x+y, [1, 2, 3])`  (=1+2=3→3+3=6) | Sum, multiply, or combine into one result |  final value    | No              |
+
+ 
   ⚠ use enumerate() and zip() with for loop, Convert to a list or Inside other functions
+  ⚠ enumerate return (index, letter) pairs 'tuple'
   ⚠ reduce, map and filter (function, iterables) 
   ⚠ reduce: import it from functools (from functools import reduce)
 

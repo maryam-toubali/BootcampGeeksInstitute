@@ -1,0 +1,19 @@
+
+🔁 What Are Loops?
+Loops let you repeat a block of code multiple times instead of writing it again and again.
+
+1️⃣ For Loops for x in group = anything that can be iterated Lists, Tuples, Strings, Dictionaries, Sets, Ranges, zip, enumerate, map, filter — they all have __iter__() method
+   _ The word 'for' is like a machine. It takes one item at a time from a group and puts it into the variable you chose — like x
+   _ Used to repeat actions a specific number of times or go through each item in a group.
+   _ Using for: What group are we looping through? What is the loop doing with each item?
+   
+
+2️⃣ Ranges range(start, end)
+The range() function creates a list of numbers. The end value is not included.
+
+3️⃣ While Loops (while condition)
+Repeat as long as a condition is True.
+
+⚠ Using a Flag
+You can control the loop with a variable (called a flag)
+

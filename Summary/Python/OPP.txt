@@ -1,0 +1,237 @@
+ 💡 Complete Summary of Object-Oriented Programming (OOP) in Python
+
+ 📘 What You Will Learn
+
+| Topic                | Description                                             |
+| -------------------- | ------------------------------------------------------- |
+| Inheritance          | Reusing code from a parent class in a child class       |
+| Overriding Methods   | Redefining methods in child class                       |
+| `super()` Function   | Accessing parent class methods                          |
+| Encapsulation        | Hiding data (using private/protected access)            |
+| Polymorphism         | Same method, different behavior depending on the object |
+| Multiple Inheritance | A class inheriting from multiple parent classes         |
+| Class Attributes     | Attributes shared by all instances                      |
+| Class Decorators     | Enhancing classes/methods with decorators               |
+| Static Methods       | Methods that don't access class/instance                |
+| Class Methods        | Methods that access the class, not instance             |
+| Property Decorators  | Create getters and setters easily                       |
+| Modules              | Organizing code into files and libraries                |
+| Errors & Exceptions  | Handling runtime issues gracefully                      |
+| Dunder Methods       | Special Python methods for customizing classes          |
+| Operator Overloading | Custom behavior for +, -, \*, etc.                      |
+
+
+ 🧬 Core Concepts Explained
+
+ 1. Inheritance
+
+* Enables code reuse
+* `class Child(Parent)` lets a class inherit from another
+
+ 2. Overriding Methods
+
+* A child class can redefine a method with the same name to change its behavior.
+ 3. `super()`
+
+* Used to call a method from the parent class inside a child method
+
+ 4. Encapsulation
+
+* Restrict access to variables and methods
+* Use `_protected` or `__private` naming
+
+ 5. Polymorphism
+
+* Different classes can define the same method name with different behaviors
+
+ 6. Multiple Inheritance
+
+* A class can inherit from more than one parent class:
+  `class A(B, C)`
+
+ 7. Class Attribute
+
+* Shared by all instances of a class (not unique per object)
+
+ 8. Decorators
+
+ @staticmethod: Doesn’t access class or instance. A static method is a method that doesn’t get self.
+ @classmethod: Accesses the class (not instance)
+ @property: Used to define getters
+
+  * `.getter`: Access an attribute like a method
+  * `.setter`: Allow setting value to the attribute
+
+
+
+ 🎯 Class Decorators in Python (Simplified)
+
+ ✅ What is a decorator?
+
+A decorator is a special function that modifies the behavior of another function or method **without changing its code**. You apply it with the `@` symbol.
+
+---
+
+ 🧱 `@staticmethod`
+
+ 🧠 Purpose:
+
+Use this when your method **does not need access** to the object (`self`) or the class (`cls`).
+
+```python
+class MathTools:
+    @staticmethod
+    def add(x, y):
+        return x + y
+
+print(MathTools.add(2, 3))  # ✅ Output: 5
+```
+
+ 🗒 Schema:
+
+```
+@staticmethod
+ ↓
+ method(x, y)
+ 🚫 No self / cls used
+```
+
+---
+
+ 🧱 `@classmethod`
+
+ 🧠 Purpose:
+
+Use this when your method **needs access to the class** but not a specific object.
+
+```python
+class Person:
+    species = "human"
+
+    @classmethod
+    def info(cls):
+        return f"We are {cls.species}"
+
+print(Person.info())  # ✅ Output: We are human
+```
+
+ 🗒 Schema:
+
+```
+@classmethod
+ ↓
+ method(cls)
+ ✅ Access to class variables
+```
+
+---
+
+ 🧱 `@property` – **Getters & Setters**
+
+Used to make **methods behave like attributes**.
+
+ 1️⃣ Getter (read value like a variable)
+
+```python
+class Circle:
+    def __init__(self, radius):
+        self._radius = radius
+
+    @property
+    def radius(self):
+        return self._radius
+
+c = Circle(5)
+print(c.radius)  # ✅ Output: 5
+```
+
+✅ Schema:
+
+```
+@property
+ ↓
+ def radius(self)
+ 🔁 Used like: obj.radius
+```
+
+---
+
+ 2️⃣ Setter (write value like a variable)
+
+```python
+class Circle:
+    def __init__(self, radius):
+        self._radius = radius
+
+    @property
+    def radius(self):
+        return self._radius
+
+    @radius.setter
+    def radius(self, value):
+        if value > 0:
+            self._radius = value
+
+c = Circle(5)
+c.radius = 10  # ✅ Updating using setter
+print(c.radius)  # ✅ Output: 10
+```
+
+✅ Schema:
+
+```
+@<property_name>.setter
+ ↓
+ def radius(self, value)
+ 🔁 Used like: obj.radius = 10
+```
+
+
+
+
+ 📦 Modules in Python
+
+| Action                     | Syntax/Tool                |
+| -------------------------- | -------------------------- |
+| Create a module            | Create a `.py` file        |
+| Import full module         | `import module_name`       |
+| Import specific part       | `from module import func`  |
+| Use alias                  | `import math as m`         |
+| Install package (external) | `pip install package_name` |
+| Requirements file          | `requirements.txt`         |
+
+
+ ⚠️ Errors & Exceptions
+
+| Type             | Description                            |
+| ---------------- | -------------------------------------- |
+| Syntax Error     | Invalid code structure                 |
+| Exception        | Runtime error (e.g., division by zero) |
+| Try/Except Block | Handles exceptions                     |
+| Else             | Runs if no exception                   |
+| Finally          | Runs always                            |
+| Raise            | Throw your own error using `raise`     |
+
+
+ ⚙️ Dunder Methods (`__init__`, `__str__`, ...)
+
+| Dunder Method | Purpose                         |
+| ------------- | ------------------------------- |
+| `__init__`    | Constructor method              |
+| `__str__`     | String representation of object |
+| `__len__`     | Length of object                |
+| `__add__`     | Custom + operation              |
+| `__eq__`      | Custom equality operation       |
+
+ Operator Overloading
+
+* Use dunder methods to customize behavior for operators
+
+| Operator | Dunder Method |
+| -------- | ------------- |
+| `+`      | `__add__`     |
+| `-`      | `__sub__`     |
+| `*`      | `__mul__`     |
+| `/`      | `__truediv__` |
+| `==`     | `__eq__`      |
+

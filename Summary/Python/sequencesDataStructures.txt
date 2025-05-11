@@ -1,8 +1,8 @@
 
 
- ⚠ iterables(anything you can loop over using a for loop): 
-    Lists, Tuples, Strings, Dictionaries, Sets, Ranges and Any object with __iter__() method 
-   
+ ⚠ iterables(group) (anything you can loop over using a for loop "with __iter__ methode"): 
+    Lists, Tuples, Strings, Dictionaries, Sets, Ranges, zip, enumerate, map, filter — they all have __iter__()
+    test if iterable with print(hasattr(test, '__iter__'))   
       
 ✅ Tips:
 list when you need to modify or update data frequently.
@@ -18,7 +18,7 @@ List	✅ Yes	✅ Yes	                  ✅ Yes	                      [x, y]
 Tuple	✅ Yes	❌ No	                  ✅ Yes	                      (x, y)
 String	✅ Yes	❌ No	                  ✅ Yes	                       "xy"
 Set	    ❌ No	✅ Yes	                  ❌ No	                      {x, y}
-
+ 
 ⚠ Notes:
 set.pop() removes a random item (not the last).
 tuple is immutable — you can't change it (no .append(), .remove(), etc.).
@@ -37,6 +37,16 @@ enumerate(sq)   all	                  Get index and item at the same time
 
     list(sq) tuple(sq) set(sq) dict(sq)	
     type(sq)     Shows the data type 
+
+🔑 key  (function_name(iterable, key=function))
+| Feature                      | Description                                                             |
+| ---------------------------- | ----------------------------------------------------------------------- |
+| **What it is**               | A **parameter** used in functions like `sorted()`, `max()`, and `min()` |
+| **What it does**             | Tells Python **how to compare** or **sort** items                       |
+| **Takes as input**           | A **function** (like `lambda`) that returns the value to compare        |
+| **Does it return anything?** | No — it helps the function decide **which item to pick or how to sort** |
+
+
 
 🧰 Methods (actions you do):
 Method	            Description	              List	 Set  Tuple
