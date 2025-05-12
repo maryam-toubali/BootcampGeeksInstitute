@@ -11,15 +11,9 @@ CREATE TABLE customers (
     last_name TEXT NOT NULL
 );
 
-INSERT INTO items (name, price) VALUES ('Small Desk', 100);
-INSERT INTO items (name, price) VALUES ('Large Desk', 300);
-INSERT INTO items (name, price) VALUES ('Fan', 80);
+INSERT INTO items (name, price) VALUES ('Small Desk', 100), ('Large Desk', 300), ('Fan', 80);
 
-INSERT INTO customers (first_name, last_name) VALUES ('Greg', 'Jones');
-INSERT INTO customers (first_name, last_name) VALUES ('Sandra', 'Jones');
-INSERT INTO customers (first_name, last_name) VALUES ('Scott', 'Scott');
-INSERT INTO customers (first_name, last_name) VALUES ('Trevor', 'Green');
-INSERT INTO customers (first_name, last_name) VALUES ('Melanie', 'Johnson');
+INSERT INTO customers (first_name, last_name) VALUES ('Greg', 'Jones'), ('Sandra', 'Jones'), ('Scott', 'Scott'), ('Trevor', 'Green'), ('Melanie', 'Johnson');
 
 SELECT * FROM items;
 SELECT * FROM items WHERE price > 80 ;
