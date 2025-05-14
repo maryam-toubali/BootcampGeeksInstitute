@@ -41,11 +41,11 @@ WHERE film_id IN (15, 150);
 
 SELECT film_id, title, description, length, rental_rate
 FROM film
-WHERE title = 'Your Favorite Movie';
+WHERE title = 'The kid';
 
 SELECT film_id, title, description, length, rental_rate
 FROM film
-WHERE title ILIKE 'IN%';
+WHERE title ILIKE 'Th%';
 
 SELECT film_id, title, rental_rate
 FROM film
