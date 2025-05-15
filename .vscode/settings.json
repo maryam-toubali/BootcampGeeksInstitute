@@ -53,6 +53,27 @@
             "username": "postgres",
             "password": "admin",
             "connectionTimeout": 30
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "myapp DB",
+            "database": "myapp",
+            "username": "postgres",
+            "password": "admin"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "menu DB",
+            "database": "menu",
+            "username": "postgres",
+            "password": "admin",
+            "connectionTimeout": 30
         }
     ]
 }
