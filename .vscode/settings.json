@@ -5,54 +5,10 @@
             "server": "localhost",
             "port": 5432,
             "driver": "PostgreSQL",
-            "name": "bootcamp DB",
+            "name": "pg",
             "database": "bootcamp",
             "username": "postgres",
             "password": "admin"
-        },
-        {
-            "previewLimit": 50,
-            "server": "localhost",
-            "port": 5432,
-            "driver": "PostgreSQL",
-            "name": "dvdrental DB",
-            "database": "dvdrental",
-            "username": "postgres",
-            "password": "admin",
-            "connectionTimeout": 30
-        },
-        {
-            "previewLimit": 50,
-            "server": "localhost",
-            "port": 5432,
-            "driver": "PostgreSQL",
-            "name": "public DB",
-            "database": "public",
-            "username": "postgres",
-            "password": "admin",
-            "connectionTimeout": 30
-        },
-        {
-            "previewLimit": 50,
-            "server": "localhost",
-            "port": 5432,
-            "driver": "PostgreSQL",
-            "name": "company DB",
-            "database": "company",
-            "username": "postgres",
-            "password": "admin",
-            "connectionTimeout": 30
-        },
-        {
-            "previewLimit": 50,
-            "server": "localhost",
-            "port": 5432,
-            "driver": "PostgreSQL",
-            "name": "Hollywood DB",
-            "database": "Hollywood",
-            "username": "postgres",
-            "password": "admin",
-            "connectionTimeout": 30
         },
         {
             "previewLimit": 50,
@@ -63,17 +19,8 @@
             "database": "myapp",
             "username": "postgres",
             "password": "admin"
-        },
-        {
-            "previewLimit": 50,
-            "server": "localhost",
-            "port": 5432,
-            "driver": "PostgreSQL",
-            "name": "menu DB",
-            "database": "menu",
-            "username": "postgres",
-            "password": "admin",
-            "connectionTimeout": 30
         }
-    ]
+    ],
+    "liveServer.settings.port": 5501,
+    "livePreview.defaultPreviewPath": "/Week2/Day5/index.html"
 }
