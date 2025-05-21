@@ -1,0 +1,26 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "pg",
+            "database": "bootcamp",
+            "username": "postgres",
+            "password": "admin"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "myapp DB",
+            "database": "myapp",
+            "username": "postgres",
+            "password": "admin"
+        }
+    ],
+    "liveServer.settings.port": 5501,
+    "livePreview.defaultPreviewPath": "/Week2/Day5/index.html"
+}

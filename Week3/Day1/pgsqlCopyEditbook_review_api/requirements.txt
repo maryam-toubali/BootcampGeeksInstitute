@@ -1,0 +1,126 @@
+# 📚 Book Review API – Project Summary
+
+## 🧠 Overview
+
+A RESTful API using FastAPI + SQLAlchemy with JWT authentication.
+
+### Core Features:
+- User registration and login
+- Books CRUD (Create, Read, Update, Delete)
+- Review system per book (users can only edit their reviews)
+- Role system: Admins vs Users
+
+---
+
+## 🔧 Files & Responsibilities
+
+| File               | Purpose                                      |
+|--------------------|----------------------------------------------|
+| `main.py`          | FastAPI app entry point + routes             |
+| `database.py`      | SQLAlchemy DB setup (engine + session)       |
+| `models.py`        | ORM models (User, Book, Review)              |
+| `schemas.py`       | Pydantic schemas for validation              |
+| `crud.py`          | Database logic for CRUD                      |
+| `auth.py`          | Password hashing + JWT token creation        |
+| `middleware.py`    | JWT middleware                               |
+| `dependencies.py`  | Reusable dependency functions                |
+
+## 📦 Structure
+
+📁 Project Layout
+book_review_api/
+│
+├── app/
+│   ├── main.py
+│   ├── database.py
+│   ├── models.py
+│   ├── schemas.py
+│   ├── crud.py
+│   ├── auth.py
+│   ├── middleware.py
+│   └── dependencies.py
+│
+└── requirements.txt
+
+---
+
+## 🔐 Authentication Flow
+
+1. User signs up at `/signup` → password is hashed and saved
+2. Logs in at `/login` → JWT token is returned
+3. Token is used for all protected routes via `Authorization: Bearer <token>`
+4. Middleware extracts token and attaches user to request
+5. Dependencies (`get_current_user`, `get_admin_user`) are used in routes
+
+---
+
+## 🛢️ Database Architecture
+
+We use **PostgreSQL** or **SQLite** with **SQLAlchemy ORM**.
+
+### Tables:
+
+#### 🧑 Users
+
+| Field      | Type     | Notes               |
+|------------|----------|---------------------|
+| id         | Integer  | Primary key         |
+| username   | String   | Unique, required     |
+| email      | String   | Unique, validated    |
+| hashed_password | String | Password hash    |
+| is_admin   | Boolean  | Default: False       |
+| reviews    | Relationship | One-to-many with `Review` |
+
+#### 📚 Books
+
+| Field      | Type     | Notes                   |
+|------------|----------|-------------------------|
+| id         | Integer  | Primary key             |
+| title      | String   | Required                |
+| author     | String   | Required                |
+| reviews    | Relationship | One-to-many with `Review` |
+
+#### 📝 Reviews
+
+| Field      | Type     | Notes                                 |
+|------------|----------|---------------------------------------|
+| id         | Integer  | Primary key                           |
+| content    | String   | Required                              |
+| rating     | Integer  | 1–5 range                             |
+| user_id    | ForeignKey → users.id | Review creator            |
+| book_id    | ForeignKey → books.id | Reviewed book             |
+| user       | Relationship | Many-to-one with `User`            |
+| book       | Relationship | Many-to-one with `Book`            |
+
+---
+
+## 🔗 Entity Relationship Diagram (ERD)
+
+```plaintext
+          ┌────────────┐        ┌────────────┐        ┌────────────┐
+          │   Users    │        │   Books    │        │  Reviews   │
+          └────────────┘        └────────────┘        └────────────┘
+               ▲                      ▲                      ▲
+               │                      │                      │
+         One-to-many            One-to-many         ┌────────────┐
+               │                      │              │  Foreign   │
+               └──────────┬───────────┘              └────────────┘
+                          ▼
+                     [Reviews]
+
+
+
+---
+
+## Technologies Used
+
+- FastAPI
+- SQLAlchemy
+- Pydantic
+- PostgreSQL or SQLite
+- Passlib (for password hashing)
+- python-jose (for JWT tokens)
+
+
+
+
