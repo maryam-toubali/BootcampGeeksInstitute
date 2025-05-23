@@ -34,11 +34,11 @@ for (let i = 0; i < colors.length; i++) {
 
 
 //ex3:
-let number = prompt("Enter a number:");
-while (isNaN(number) || Number(number) < 10) {
-  number = prompt("Number is less than 10. Please enter a new number:");
-}
-console.log("You entered:", number);
+let userInput = prompt("Enter a number:");
+console.log(typeof userInput);
+while (isNaN(userInput) || Number(userInput) < 10){
+  userInput = prompt("Enter a number grater than 10:");
+};
 
 
 //ex4:
@@ -95,17 +95,13 @@ const details = {
   is: 'Rudolf',
   the: 'reindeer'
 };
-let sentence = "";
+let intro = '';
 for (let key in details) {
-  sentence += key + " " + details[key] + " ";
+  intro += `${key} ${details[key]} `;
 }
-console.log(sentence.trim()); 
+console.log(intro.trim());
 
 
 //ex7:
-const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
-let secretName = names
-  .map(name => name[0]) 
-  .sort()               
-  .join("");            
-console.log("Secret Society Name:", secretName); 
+const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];    
+console.log("Society Name:", names.map(l => l[0]).sort().join(""));

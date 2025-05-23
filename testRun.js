@@ -1,15 +1,10 @@
-//Using one loop:
-let star = "";
-for (let i = 0; i < 6; i++) {
-  star += "* ";
-  console.log(star.trim());   // trim() remove the extra space
-}
+const planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
+planets.forEach(planet => {
+  const div = document.createElement("div");
+  div.className = "planet";
+});
 
-//using two nested for loops:
-for (let i = 0; i < 6; i++) {
-  let star = "";
-  for (let j = 0; j <= i; j++) {
-    star += "* ";
-  }
-  console.log(star.trim());   
-}
+planets.forEach(planet => {
+  div = document.querySelector("div");
+  div.innerText("color = red")
+})
