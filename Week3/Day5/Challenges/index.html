@@ -4,26 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Daily Challenge: Todo List</title>
-  <!-- Font Awesome for the "X" icon -->
+
+  <!-- Font Awesome for delete icon -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-pVdzjo0UAM+ht1Xxz7gTZo4gCllwhe9XZGkk0HXRvntpqxB8oPrVv7ztBk7Hih5y/3uzmIKqVFhbC2jUP2q8lg=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Daily Challenge: Todo List</h1>
+  <main>
+    <h1>Daily Challenge: Todo List</h1>
 
-  <form id="taskForm">
-    <input type="text" id="taskInput" placeholder="Enter your task..." />
-    <button type="submit">Submit</button>
-  </form>
+    <form id="taskForm">
+      <input type="text" id="taskInput" placeholder="Add new task" autocomplete="off" />
+      <button type="submit">Submit</button>
+    </form>
 
-  <div class="listTasks"></div>
+    <div class="listTasks"></div>
 
-  <script src="testRun.js"></script>
+    <button id="clearAllBtn" class="clearBtn">Clear All Tasks</button>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>

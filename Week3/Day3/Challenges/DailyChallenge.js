@@ -38,18 +38,40 @@
 </html> */
 
 //Js
-const planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
+const planets = [
+  { name: "Mercury", moons: 0 },
+  { name: "Venus", moons: 0 },
+  { name: "Earth", moons: 1 },
+  { name: "Mars", moons: 2 },
+  { name: "Jupiter", moons: 79 },
+  { name: "Saturn", moons: 83 },
+  { name: "Uranus", moons: 27 },
+  { name: "Neptune", moons: 14 }
+];
+
+const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'pink', 'purple'];
 
 const section = document.querySelector(".listPlanets");
 
-const colors = ["gray", "goldenrod", "blue", "red", "orange", "khaki", "lightblue", "darkblue"];
-
 planets.forEach((planet, index) => {
-  const planetDiv = document.createElement("div");
-  planetDiv.classList.add("planet");
+  // Create a div for the planet
+  const planetDiv = document.createElement('div');
+  planetDiv.classList.add('planet');
+
+  // Set its background color based on index
   planetDiv.style.backgroundColor = colors[index];
-  planetDiv.textContent = planet;
+
+  // Add moons to this planet div
+  for (let i = 0; i < planet.moons; i++) {
+    const moon = document.createElement('div');
+    moon.classList.add('moon');
+    // Position moons around the planet (you can customize this)
+    moon.style.left = `${30 + i * 15}px`;
+    moon.style.top = `${10 + i * 10}px`;
+    planetDiv.appendChild(moon);
+  }
+
+  // Append this planet div (with moons) to the section
   section.appendChild(planetDiv);
 });
-
 

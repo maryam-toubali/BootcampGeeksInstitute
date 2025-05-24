@@ -214,9 +214,9 @@ const allBooks = [
     alreadyRead: true
   },
   {
-    title: "1984",
-    author: "George Orwell",
-    image: "https://covers.openlibrary.org/b/id/7222246-L.jpg",
+    title: "The Pursuit of Happyness",
+    author: "Chris Gardner",
+    image: "https://covers.openlibrary.org/b/id/34094-L.jpg",
     alreadyRead: false
   }
 ];
