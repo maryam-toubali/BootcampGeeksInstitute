@@ -1,107 +1,73 @@
-//ex1:
-//part1:
-const people = ["Greg", "Mary", "Devon", "James"];
-people.shift();
-console.log(people);
-people[2] = "Jason";
-console.log(people);
-people.push("Maryam");
-console.log(people);
-console.log(people.indexOf("Mary"));
-console.log(people.slice(1));
-console.log(people.indexOf("Foo"));  // returns -1 — this is the standard return value to indicate “not found”
-let last = people[people.length - 1];
-console.log(last);
-//part2:
-for(let i = 0; i < people.length; i++ ) {
-    console.log(people[i]);
-}
-for(let i = 0; i < people.length; i++ ) {
-    console.log(people[i]);
-    if (people[i] === "Devon") break;
-}
+//Ex1:
+// const colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
+// const displayColors = () => { 
+//  for( let i = 0; i < colors.length; i++ ) { 
+//  console.log(`${i+1}# choice is ${colors[i]}.`)
+//  }
+//  colors.includes("Violet") ? console.log("Yeah") : console.log("No...");  // or: some(color => color === 'Violet')
+// } 
+// displayColors();
 
+//Ex2:
+const colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
+const ordinal = ["th","st","nd","rd"];
+const displayColors = () => { 
+for( let i = 0; i < colors.length; i++ ) { 
+    (i+1 <= 3) ? console.log(`${i+1}${ordinal[i+1]} choice is ${colors[i]}.`) : console.log(`${i+1}${ordinal[0]} choice is ${colors[i]}.`)
+    }
+} 
+displayColors();
 
-//ex2:
-let colors = ["White", "Red", "Black", "Brown", "Beige"];
-for(let i=0; i < colors.length; i++){
-  console.log(`My #${i+1} choice is ${colors[i]}`);
-}
-const suffix = ["st", "nd", "rd"];
-for (let i = 0; i < colors.length; i++) {
-  console.log(`My ${i+1}${suffix[i] || "th"} choice is ${colors[i]}`);  // th default value
-}
+//Ex3:
+//The spread operator ... breaks an iterable (like a string, array, Object.)(Numbers Not iterable? It breaks) into individual elements.
+//------1------
+// output: ["bread", "carrot", "potato", "chicken", "apple", "orange"]
+const fruits = ["apple", "orange"];
+const vegetables = ["carrot", "potato"];
+const result = ['bread', ...vegetables, 'chicken', ...fruits];
+console.log(result);
+//------2------
+// output: ['U', 'S', 'A']
+const country = "USA";
+console.log([...country]);
+//------Bonus------
+// output: [undefined, undefined] // ( not [,,]/ [undefined, undefined, undefined]) 
+let newArray = [...[,,]];
+console.log(newArray);
 
+//Ex4:
+const users = [
+  { firstName: 'Bradley', lastName: 'Bouley', role: 'Full Stack Resident' },
+  { firstName: 'Chloe', lastName: 'Alnaji', role: 'Full Stack Resident' },
+  { firstName: 'Jonathan', lastName: 'Baughn', role: 'Enterprise Instructor' },
+  { firstName: 'Michael', lastName: 'Herman', role: 'Lead Instructor' },
+  { firstName: 'Robert', lastName: 'Hajek', role: 'Full Stack Resident' },
+  { firstName: 'Wes', lastName: 'Reid', role: 'Instructor'},
+  { firstName: 'Zach', lastName: 'Klabunde', role: 'Instructor'}
+];
+const welcomeStudents = users.map(user => `Hello ${user.firstName}`);
+console.log(welcomeStudents);
+const FullStackRes = users.filter(user => user.role === 'Full Stack Resident');
+console.log(FullStackRes);
+const lastNamesFSRs = users
+.filter(user => user.role === 'Full Stack Resident')
+.map(user => user.lastName);
+console.log(lastNamesFSRs);
 
-//ex3:
-let userInput = prompt("Enter a number:");
-console.log(typeof userInput);
-while (isNaN(userInput) || Number(userInput) < 10){
-  userInput = prompt("Enter a number grater than 10:");
-};
+//Ex5:
+const epic = ['a', 'long', 'time', 'ago', 'in a', 'galaxy', 'far far', 'away'];
+const combine = epic.reduce((acc, currentWord) => acc + ' ' + currentWord );
+console.log(combine);
 
-
-//ex4:
-const building = {
-  numberOfFloors: 4,
-  numberOfAptByFloor: {
-    firstFloor: 3,
-    secondFloor: 4,
-    thirdFloor: 9,
-    fourthFloor: 2,
-  },
-  nameOfTenants: ["Sarah", "Dan", "David"],
-  numberOfRoomsAndRent:  {
-    sarah: [3, 990],
-    dan:  [4, 1000],
-    david: [1, 500],
-  },
-};
-
-console.log("Number of floors:", building.numberOfFloors);
-console.log("Apts on 1st floor:", building.numberOfAptByFloor.firstFloor);
-console.log("Apts on 3rd floor:", building.numberOfAptByFloor.thirdFloor);
-
-const secondTenant = building.nameOfTenants[1]; // Dan
-const rooms = building.numberOfRoomsAndRent[secondTenant.toLowerCase()][0];
-console.log(`Second tenant is ${secondTenant}, has ${rooms} rooms.`);
-
-const rentSarah = building.numberOfRoomsAndRent.sarah[1];
-const rentDavid = building.numberOfRoomsAndRent.david[1];
-const rentDan = building.numberOfRoomsAndRent.dan[1];
-if (rentSarah + rentDavid > rentDan) {
-  building.numberOfRoomsAndRent.dan[1] = 1200;
-  console.log("Dan's rent has been increased to 1200.");
-}
-
-
-//ex5:
-const family = {
-  father: "AbdelMouyd",
-  mother: "Khadija",
-  child: "Maryam"
-};
-for (let key in family) {
-  console.log("Key:", key);
-}
-for (let key in family) {
-  console.log("Value:", family[key]);
-}
-
-
-//ex6:
-const details = {
-  my: 'name',
-  is: 'Rudolf',
-  the: 'reindeer'
-};
-let intro = '';
-for (let key in details) {
-  intro += `${key} ${details[key]} `;
-}
-console.log(intro.trim());
-
-
-//ex7:
-const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];    
-console.log("Society Name:", names.map(l => l[0]).sort().join(""));
+//Ex6:
+const students = [{name: "Ray", course: "Computer Science", isPassed: true}, 
+               {name: "Liam", course: "Computer Science", isPassed: false}, 
+               {name: "Jenner", course: "Information Technology", isPassed: true}, 
+               {name: "Marco", course: "Robotics", isPassed: true}, 
+               {name: "Kimberly", course: "Artificial Intelligence", isPassed: false}, 
+               {name: "Jamie", course: "Big Data", isPassed: false}];
+const studentPass = students.filter(user => user.isPassed === true);
+console.log(studentPass);
+studentPass.forEach(student => 
+    console.log(`Good Job ${student.name} you passed the course in ${student.course}`)
+); // or students.filter(student => student.isPassed).forEach(...);

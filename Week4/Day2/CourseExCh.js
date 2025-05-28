@@ -1,93 +1,46 @@
-//
-let names= ["john", "sarah", 23, "Rudolf",34]
+// //1st example
+// const myArr = [1, 2, 3, 4, 5, 6, 7, 8];
+// myArr.some((value)=> { return (value%2 == 0); });
+// //output : true 
+// //because there is at least one even number in the array
 
-for (let i=0; i < names.length; i++){
-    if (typeof(names[i]) !== "string"){      // can also use != but we use !== for the best practice
-        continue;
-    }
-    if (names[i][0] !== names[i][0].toUpperCase()){   
-        names[i] = names[i][0].toUpperCase() + names[i].slice(1);
-    }
-}
-console.log(names);
+// //2nd example
+// myArr.some((value)=> { return (value < 0); });
+// //output: false 
+// //because there is no negative number in the array
 
-for (let i=0; i < names.length; i++){
-    if (typeof(names[i]) !== "string"){
-        break;
-    }
-    else { 
-        console.log(names[i]);
-    }
-}
+// //If the arrow function is only returning a value you don't need the return keyword
+// //If the arrow function takes only one parameter you can omit the parentheses
+// myArr.some(value => value < 0 );
+// //output: false 
+// //because there is no negative number in the array
 
-//
-let user = {
-    username: "maryam",
-    password: "123"
-};
-let database = [user];
-let newsfeed = [
-  {
-    username: "Sara",
-    timeline: "Enjoying a sunny day"
-  },
-  {
-    username: "Zineb",
-    timeline: "Just finished my JavaScript project!"
-  },
-  {
-    username: "Halima",
-    timeline: "Coding late night"
-  }
-];
-console.log("Database:", database);
-console.log("Newsfeed:", newsfeed);
+// //3rd example
+// function isEven(x) {
+//   console.log(x) 
+//   return (x % 2 == 0);
+// }
 
-//
-let name = prompt("What's your name?", "Guest");                                // 1. Ask the user for their name using prompt()
-let wantsGreeting = confirm("Would you like a personalized welcome message?");  // 2. Confirm if they want a personalized greeting
-if (wantsGreeting) {                                                            // 3. Show a message based on their answer
-  alert(`Welcome, ${name}! We're happy to see you.`);
-} else {
-  alert("Welcome! Enjoy your visit.");
-}
-  
+// myArr.some((value) => isEven(value));
+// //output : 1 2 true
+// //stops iterating as soon as an even number is found 
 
-//
-let birthYear = 1998;
-let futureYear = 2100;
-let possibleAge = futureYear - birthYear;
-console.log(`I will be ${possibleAge} in ${futureYear}`);
 
-//
-let addressNumber = 10;
-let addressStreet = "Al Maghrib Street";
-let country = "Morocco";
-let globalAddress = `I live in ${addressNumber} ${addressStreet}, in ${country}`;
-console.log(globalAddress);
+// //1st example
+const myArr = [1, 2, 3, 4, 5, 6, 7, 8];
+// myArr.every((value)=> { return (value > 0); });
+// //output : true 
+// //because all the elements of the array are positive
 
-//
-console.log('To be or not to be'.indexOf('To'));
-console.log('To be or not to be'.indexOf(' '));
-console.log('To be or not to be'.indexOf('o', 2));
-console.log('To be or not to be'.indexOf('be', 4));
-console.log('To be or not to be'.indexOf('to'));
-console.log('To be or not to be'.indexOf('B'));
-console.log('To be or not to be'.indexOf('', 9))
+// //2nd example
+// myArr.every(value => value == 5 );
+// //output : false 
+// //because not all the elements of the array are equal to 5
 
-//
-string = "A-quick-brown-fox" //string to be split
-array_of_strings = string.split("-") //The split() function 
-console.log(string) //note that the split function doesn't change the original string
-console.log(array_of_strings)
-
-string = "A quick brown fox" //string to be split
-array_of_strings = string.split("") //The split() function 
-console.log(string) //note that the split function doesn't change the original string
-console.log(array_of_strings)
-
-//
-console.log(3 || 'Orange');
-console.log('' || 'Orange');
-console.log(true || 0);
-console.log(undefined || null);
+//3rd example
+myArr.every((value) => { 
+    console.log(value); 
+    return (value != 4); 
+});
+//output 1 2 3 4 false
+//because as soon as an element in the array is equal to 4, the method every() stops iterating 

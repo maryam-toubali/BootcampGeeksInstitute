@@ -108,7 +108,7 @@ console.log(kgToGram(2));
 
 
 //Ex6:
-//Html
+// Html
 // <!DOCTYPE html>
 // <html lang="en">
 // <head>
