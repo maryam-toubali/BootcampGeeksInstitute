@@ -1,37 +1,46 @@
 // Ch:
 //
 class Video {
-  constructor(title, uploader, time) {
+  constructor (title, uploader, time){
     this.title = title;
     this.uploader = uploader;
-    this.time = time; 
+    this.time = time;  
   }
-
+  
   watch() {
-    console.log(`${this.uploader} watched all ${this.time} seconds of ${this.title}!`);
+    console.log(`${this.uploader} watched all ${this.time} seconds of "${this.title}"!`);
   }
 }
-
-const video1 = new Video("Learn JavaScript", "Alice", 300);
+const video1 = new Video('Learn JavaScript', 'Sara', 300);
 video1.watch();
+const video2 = new Video('Learn Python', 'Zineb', 200);
+video2.watch();
 
-const video2 = new Video("Cooking Pasta", "Bob", 600);
-video2.watch(); 
-//array with video data
-const videosData = [
-  ["Learn JS", "Alice", 300],
-  ["Cooking Pasta", "Bob", 600],
-  ["Travel Vlog", "Charlie", 900],
-  ["Workout Tips", "Diana", 400],
-  ["Movie Review", "Eve", 500]
+const videos = [
+  ["Punch needls", "Hiba", 300],
+  ["Cooking Pasta", "Halima", 600],
+  ["Travel Vlog", "Houria", 900],
+  ["Workout Tips", "Hajar", 400],
+  ["Movie Review", "Oumayma", 500]
 ];
-const videoInstances = [];
-//
-videosData.forEach(data => {
-  const [title, uploader, time] = data;
-  const video = new Video(title, uploader, time);
-  videoInstances.push(video);
-});
 
-// Call watch() for each video instance
-videoInstances.forEach(video => video.watch());
+const videoList = videos.map(([title, uploader, time]) =>
+new Video(title, uploader, time));
+videoList.forEach(video => video.watch());
+
+// const videoInstances = [];
+// videosData.forEach(data => {
+//   const [title, uploader, time] = data;
+//   const video = new Video(title, uploader, time);
+//   videoInstances.push(video);
+// });
+
+
+
+
+
+
+
+
+
+
