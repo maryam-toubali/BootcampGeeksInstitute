@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple POST Form</title>
+</head>
+<body>
+<!--
+The data is included in the request body (not visible in the URL).
+To see the sent data:
+Open your browser’s Developer Tools (usually fn + F12 or right-click → Inspect) -
+Go to the Network tab - Submit the form - Select the new POST request that appears -
+Look under Payload or Form Data section — the form inputs will be listed there.    
+-->
+  <form method="POST" action="">
+    <label for="name">Name</label><br>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="comments">Comments</label><br>
+    <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+    <input type="submit" value="Send">
+  </form>
+</body>
+</html>

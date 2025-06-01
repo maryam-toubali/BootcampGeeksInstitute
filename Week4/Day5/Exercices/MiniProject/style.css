@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap');
+
+h1 {
+  font-family: 'SEGA LOGO FONT', 'Orbitron', sans-serif;
+  font-size: 36px;
+  color: #f5e9ff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+#searchInput {
+  flex: 1;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+body {
+  background-color: #121212;
+  color: #f5e9ff;
+  margin: 0;
+  padding: 0;
+  background-image: url('circuit-pattern.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Orbitron', sans-serif;
+}
+
+#robotContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.robot-card {
+  background: #1e1e2f;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 10px;
+  background-image: url('card-pattern.png');
+  text-align: center;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.robot-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.robot-card h2 {
+  font-size: 16px;
+  margin: 5px 0;
+  font-family: 'Audiowide', cursive;
+}
+
+.robot-card p {
+  margin: 2px 0;
+  font-size: 12px;
+  font-family: 'Share Tech Mono', monospace;
+}
