@@ -1,0 +1,2 @@
+This is the daily challenge file content.
+You are learning Node.js modules, chalk, and file systems.

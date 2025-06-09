@@ -1,0 +1,51 @@
+/* Make the whole page background and center everything */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically */
+}
+
+/* Stack everything vertically */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Adds spacing between logo, card, and button */
+}
+
+.logo {
+  width: 300px;
+}
+
+.card {
+  border: 2px solid yellow;
+  border-radius: 15px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  min-width: 250px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 2px solid yellow;
+  background-color: rgb(220, 220, 220);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
