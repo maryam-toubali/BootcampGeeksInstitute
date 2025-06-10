@@ -1,0 +1,21 @@
+/* public/style.css */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 2rem;
+}
+
+#emoji {
+  font-size: 5rem;
+  margin: 1rem 0;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+#feedback {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
