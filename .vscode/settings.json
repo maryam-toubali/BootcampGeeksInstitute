@@ -19,6 +19,16 @@
             "database": "myapp",
             "username": "postgres",
             "password": "admin"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "Blog API DB",
+            "database": "Blog API DB",
+            "username": "postgres",
+            "password": "admin"
         }
     ],
     "liveServer.settings.port": 5501,
