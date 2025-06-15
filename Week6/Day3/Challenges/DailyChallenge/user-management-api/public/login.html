@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login</title>
+  <script>
+    function checkForm() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      document.getElementById('submit').disabled = !(username && password);
+    }
+  </script>
+</head>
+<body>
+  <h2>Login</h2>
+  <form method="POST" action="/login">
+    <input id="username" name="username" placeholder="Username" oninput="checkForm()"><br>
+    <input id="password" name="password" type="password" placeholder="Password" oninput="checkForm()"><br>
+    <button id="submit" disabled>Login</button>
+  </form>
+</body>
+</html>

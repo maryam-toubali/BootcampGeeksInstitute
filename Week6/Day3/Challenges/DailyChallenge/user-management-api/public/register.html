@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Register</title>
+  <script>
+    function checkForm() {
+      const fields = ['firstName','lastName','email','username','password'];
+      let valid = fields.every(id => document.getElementById(id).value.trim() !== '');
+      document.getElementById('submit').disabled = !valid;
+    }
+  </script>
+</head>
+<body>
+  <h2>Register</h2>
+  <form method="POST" action="/register">
+    <input id="firstName" name="firstName" placeholder="First Name" oninput="checkForm()"><br>
+    <input id="lastName" name="lastName" placeholder="Last Name" oninput="checkForm()"><br>
+    <input id="email" name="email" placeholder="Email" oninput="checkForm()"><br>
+    <input id="username" name="username" placeholder="Username" oninput="checkForm()"><br>
+    <input id="password" name="password" type="password" placeholder="Password" oninput="checkForm()"><br>
+    <button id="submit" disabled>Register</button>
+  </form>
+</body>
+</html>
