@@ -1,0 +1,8 @@
+{
+  "SocialMedias": ["Facebook", "Twitter", "Instagram"],
+  "Skills": { "html": "80%", "css": "70%", "js": "85%" },
+  "Experiences": [
+    { "company": "Google", "years": "2 years" },
+    { "company": "Amazon", "years": "3 years" }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "fullstack-app",
+  "scripts": {
+    "client": "cd client && npm start",
+    "server": "cd server && node server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  }
+}
