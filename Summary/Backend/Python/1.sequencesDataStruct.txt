@@ -3,22 +3,43 @@
  ⚠ iterables(group) (anything you can loop over using a for loop "with __iter__ methode"): 
     Lists, Tuples, Strings, Dictionaries, Sets, Ranges, zip, enumerate, map, filter — they all have __iter__()
     test if iterable with print(hasattr(test, '__iter__'))   
-      
+
 ✅ Tips:
 list when you need to modify or update data frequently.
 tuple to protect data from being changed (it's immutable).
 dictionary when you have data in key-value pairs (like a map).
 set when you want to ensure no duplicate elements are stored.
 
-✅ Quick Comparison (Sequences)
-nb: ordered 'indexing'
+1️⃣ Types AVEC indexing (Séquences Python)
 
-Type    Ordered?	 Changeable?	            Duplicates?	                  Syntax Example
-List	 ✅ Yes	      ✅ Yes	                  ✅ Yes	                      [x, y]
-Tuple	 ✅ Yes	      ❌ No	                      ✅ Yes	                      (x, y)
-String	 ✅ Yes       ❌ No	                  ✅ Yes	                       "xy"
-Set	     ❌ No	      ✅ Yes	                  ❌ No	                          {x, y}
- 
+⚠⚠⚠ Séquence au sens Python (officiel, strict):
+        - Une séquence est un type qui a : un ordre garanti / des indices / le slicing (Découpage)
+        - Séquences officielles Python : list tuple str range ❌ set n’est PAS une séquence ❌ dict n’est PAS une séquence
+
+| Type    | Ordered 'indexing'? | Mutable? | Duplicates? | Syntax Example  |
+| ------- | ------------------- | -------- | ----------- | --------------- |
+| `list`  | ✅ Yes              | ✅ Yes    | ✅ Yes       | `[1, "a", 3.5]` |
+| `tuple` | ✅ Yes              | ❌ No     | ✅ Yes       | `(1, "a", 3.5)` |
+| `str`   | ✅ Yes              | ❌ No     | ✅ Yes       | `"abc"`         |
+| `range` | ✅ Yes              | ❌ No     | ❌ No        | `range(1, 5)`   |
+
+📌 Règle clé :
+Indexing ⇒ Ordered ⇒ Séquence
+
+2️⃣ Types SANS indexing (Non-séquences)
+
+⚠⚠⚠ Pas d’index → pas une séquence
+
+| Type   | Indexing | Ordered? | Mutable? | Duplicates? | Syntax Example     |
+| ------ | -------- | -------- | -------- | ----------- | ------------------ |
+| `set`  | ❌ No     | ❌ No     | ✅ Yes    | ❌ No        | `{1, 2, 3}`        |
+| `dict` | ❌ No     | ✅ Yes*   | ✅ Yes    | Keys ❌      | `{"a": 1, "b": 2}` |
+  * dict est ordonné depuis Python 3.7, mais reste non indexable.
+
+📌 
+📌 Règle clé :
+Indexing ⇒ Ordered ... ❌ Ordered ⇏ Indexing
+
 ⚠ Notes:
 set.pop() removes a random item (not the last).
 tuple is immutable — you can't change it (no .append(), .remove(), etc.).
